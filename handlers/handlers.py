@@ -29,6 +29,7 @@ async def start(message: types.message):
     await bot.send_message(text="Возвращаю вас в меню",
                            chat_id=message.chat.id,
                            reply_markup=keyboard)
+    await message.delete()
 
 
 @dp.message_handler(Text(equals="Мой профиль"))
